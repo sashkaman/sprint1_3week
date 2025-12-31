@@ -4,7 +4,6 @@ import { useState } from 'react'
 import { TodolistItem } from './TodolistItem'
 import { v1 } from 'uuid'
 
-
 export type Task = {
   id: string
   title: string
