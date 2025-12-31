@@ -12,6 +12,8 @@ type Props = {
 
 export const TodolistItem = ({ title, tasks, deleteTask, changeFilter, createTask }: Props) => {
 
+  const [taskTitle, setTaskTitle] = useState('')
+
   const inputRef = useRef<HTMLInputElement>(null)
 
   return (
@@ -19,14 +21,17 @@ export const TodolistItem = ({ title, tasks, deleteTask, changeFilter, createTas
       <h3>{title}</h3>
 
       <div>
-        <input ref={inputRef} />
+        {/* <input ref={inputRef} />
 
         <Button title={'+'} onClick={() => {
           if (inputRef.current) {
             createTask(inputRef.current.value)
             inputRef.current.value = ''
           }
-        }} />
+        }} /> */}
+
+        <input value={taskTitle} />
+        <Button title={'+'} onClick={() => { }} />
       </div>
 
       {tasks.length === 0 ? (
