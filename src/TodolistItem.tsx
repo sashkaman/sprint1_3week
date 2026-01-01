@@ -1,6 +1,6 @@
+import { useRef } from 'react'
 import type { FilterValues, Task } from './App'
 import { Button } from './Button'
-// import { useRef } from 'react'
 
 type Props = {
   title: string
@@ -17,9 +17,7 @@ export const TodolistItem = ({
   changeFilter,
   createTask }: Props) => {
 
-  // const [taskTitle, setTaskTitle] = useState('')
-
-  // const inputRef = useRef<HTMLInputElement>(null)
+  const inputRef = useRef<HTMLInputElement>(null)
 
   return (
     <div>
@@ -35,10 +33,12 @@ export const TodolistItem = ({
           }
         }} /> */}
 
-        {/* <input value={taskTitle} /> */}
-        {/* <Button title={'+'} onClick={() => { }} /> */}
-        <input />
-        <Button title={'+'} onClick={createTask} />
+        <input ref={inputRef} />
+        <Button title={'+'} onClick={() => {
+          if (inputRef.current) {
+            createTask(inputRef.current.value)
+          }
+        }} />
       </div>
 
       {tasks.length === 0 ? (
