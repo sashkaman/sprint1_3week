@@ -1,4 +1,5 @@
-import { useRef } from 'react'
+// import { useRef, useState } from 'react'
+import { useState } from 'react'
 import type { FilterValues, Task } from './App'
 import { Button } from './Button'
 
@@ -30,8 +31,8 @@ export const TodolistItem = ({
             inputRef.current.value = ''
           }
         }} /> */}
-        <input value={taskTitle} />
-        <Button title={'+'} onClick={() => { }} />
+        <input value={taskTitle} onChange={event => setTaskTitle(event.currentTarget.value)} />
+        <Button title={'+'} onClick={() => createTask(taskTitle)} />
       </div>
       {tasks.length === 0 ? (
         <p>Тасок нет</p>
