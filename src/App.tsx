@@ -13,11 +13,12 @@ export type FilterValues = 'all' | 'active' | 'completed'
 export const App = () => {
   const [filter, setFilter] = useState<FilterValues>('all')
   const changeFilter = (filter: FilterValues) => { setFilter(filter) }
-  const [tasks, setTasks] = useState<Task[]>([
-    { id: v1(), title: 'HTML&CSS', isDone: true },
-    { id: v1(), title: 'JS', isDone: true },
-    { id: v1(), title: 'ReactJS', isDone: false },
-  ])
+  const [tasks, setTasks] = useState<Task[]>
+    ([
+      { id: v1(), title: 'HTML&CSS', isDone: true },
+      { id: v1(), title: 'JS', isDone: true },
+      { id: v1(), title: 'ReactJS', isDone: false },
+    ])
 
   const createTask = (title: string) => {
     const newTask = { id: v1(), title, isDone: false }
