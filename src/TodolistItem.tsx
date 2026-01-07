@@ -32,15 +32,19 @@ export const TodolistItem = ({
       <div>
         {/* <input ref={inputRef} />
         <Button title={'+'} onClick={() => {
-          if (inputRef.current) {
-            createTask(inputRef.current.value)
-            inputRef.current.value = ''
+          if (inputRef.current) {t.value)
+            inputRef.current.value = 
+            createTask(inputRef.curren''
           }
         }} /> */}
         <input
           value={taskTitle}
           onChange={event => setTaskTitle(event.currentTarget.value)}
-          onKeyDown={event => console.log(event.key)}
+          onKeyDown={event => {
+            if (event.key === 'Enter') {
+              createTaskHandler()
+            }
+          }}
         />
 
         <Button
