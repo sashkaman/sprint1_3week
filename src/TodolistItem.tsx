@@ -37,8 +37,16 @@ export const TodolistItem = ({
             inputRef.current.value = ''
           }
         }} /> */}
-        <input value={taskTitle} onChange={event => setTaskTitle(event.currentTarget.value)} />
-        <Button title={'+'} onClick={createTaskHandler} />
+        <input
+          value={taskTitle}
+          onChange={event => setTaskTitle(event.currentTarget.value)}
+          onKeyDown={event => console.log(event.key)}
+        />
+
+        <Button
+          title={'add'}
+          onClick={createTaskHandler}
+        />
       </div>
       {tasks.length === 0 ? (
         <p>Тасок нет</p>
