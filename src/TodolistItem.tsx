@@ -18,7 +18,6 @@ export const TodolistItem = ({
   changeFilter,
   createTask }: Props) => {
   const [taskTitle, setTaskTitle] = useState('')
-  // const inputRef = useRef<HTMLInputElement>(null)
 
   const createTaskHandler = () => {
     createTask(taskTitle)
@@ -27,16 +26,10 @@ export const TodolistItem = ({
 
   return (
     <div>
+
       <h3>{title}</h3>
 
       <div>
-        {/* <input ref={inputRef} />
-        <Button title={'+'} onClick={() => {
-          if (inputRef.current) {t.value)
-            inputRef.current.value = 
-            createTask(inputRef.curren''
-          }
-        }} /> */}
         <input
           value={taskTitle}
           onChange={event => setTaskTitle(event.currentTarget.value)}
@@ -67,11 +60,13 @@ export const TodolistItem = ({
           })}
         </ul>
       )}
+
       <div>
         <Button title={'All'} onClick={() => changeFilter('all')} />
         <Button title={'Active'} onClick={() => changeFilter('active')} />
         <Button title={'Completed'} onClick={() => changeFilter('completed')} />
       </div>
+
     </div>
   )
 }
