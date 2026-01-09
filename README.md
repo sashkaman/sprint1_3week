@@ -1,6 +1,6 @@
 ## React + TypeScript + Vite
 
-##0. Preparing for the lesson</br>
+0. Preparing for the lesson</br>
 ##1. Generating an id - uuid</br>
 ##2. Creating a task</br>
 ##3. Input tag</br>
